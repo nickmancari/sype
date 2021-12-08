@@ -2,7 +2,6 @@ package connect
 
 import (
 	"net/http"
-//	"io/ioutil"
 	"fmt"
 )
 
@@ -12,6 +11,12 @@ func Request(arg string) {
 		fmt.Println(err)
 	}
 
-	fmt.Println(resp.Header.Get("server"))
+	serverInfo := resp.Header.Get("server")
+
+	if serverInfo == "" {
+		fmt.Println("No Server Info Found.")
+	} else {
+		fmt.Println(serverInfo)
+	}
 
 }
