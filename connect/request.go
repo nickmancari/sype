@@ -3,6 +3,8 @@ package connect
 import (
 	"net/http"
 	"fmt"
+
+	"github.com/nickmancari/sype/pkg/color"
 )
 
 func Request(arg string) {
@@ -14,9 +16,9 @@ func Request(arg string) {
 	serverInfo := resp.Header.Get("server")
 
 	if serverInfo == "" {
-		fmt.Println("No Server Info Found.")
+		fmt.Println(color.Red+"No Server Info Found."+color.Reset)
 	} else {
-		fmt.Println(serverInfo)
+		fmt.Println(color.Green+serverInfo+color.Reset)
 	}
 
 }

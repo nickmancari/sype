@@ -3,14 +3,18 @@ package main
 import (
 	"os"
 	"fmt"
+	"strings"
 	"github.com/nickmancari/sype/connect"
 )
 
 func main() {
-//	os.Args[1]
 	if len(os.Args) > 1 {
 		url := os.Args[1]
-		connect.Request(url)
+		if strings.Contains(url, "https://") == true {
+			connect.Request(url)
+		} else {
+			connect.Request("https://"+url)
+		}
 	} else {
 		fmt.Println("Website Not Given")
 	}
