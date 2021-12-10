@@ -22,4 +22,7 @@ func Request(arg string) {
 		fmt.Println(color.Green+serverInfo+color.Reset)
 	}
 
+	moreServerInfo := resp.Header.Get("X-Backend-Server")
+	fmt.Println(moreServerInfo)
+
 }
