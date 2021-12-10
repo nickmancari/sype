@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"strings"
 	"github.com/nickmancari/sype/connect"
+	"github.com/nickmancari/sype/pkg/color"
 )
 
 func main() {
@@ -16,7 +17,7 @@ func main() {
 			connect.Request("https://"+url)
 		}
 	} else {
-		fmt.Println("Website Not Given")
+		fmt.Println(color.Yellow+"Website Not Given"+color.Reset)
 	}
 
 }
