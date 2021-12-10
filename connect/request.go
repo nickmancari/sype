@@ -8,6 +8,7 @@ import (
 )
 
 func Request(arg string) {
+
 	resp, err := http.Get(arg)
 	if err != nil {
 		fmt.Println(err)
